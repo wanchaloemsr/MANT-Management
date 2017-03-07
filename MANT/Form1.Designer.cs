@@ -35,7 +35,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.add_btn = new System.Windows.Forms.Button();
             this.permit_type_box = new System.Windows.Forms.ComboBox();
             this.club_name_textBox = new System.Windows.Forms.TextBox();
             this.applicant_name_textBox = new System.Windows.Forms.TextBox();
@@ -44,6 +43,8 @@
             this.end_picker = new System.Windows.Forms.DateTimePicker();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.Close_btn = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
+            this.massege_label = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +71,7 @@
             this.tableLayoutPanel1.Controls.Add(this.start_picker, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.end_picker, 1, 5);
             this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.massege_label, 0, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 7;
@@ -162,17 +164,6 @@
             this.label1.Text = "Permit Type";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // add_btn
-            // 
-            this.add_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.add_btn.Location = new System.Drawing.Point(105, 3);
-            this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(96, 37);
-            this.add_btn.TabIndex = 12;
-            this.add_btn.Text = "Add";
-            this.add_btn.UseVisualStyleBackColor = true;
-            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
-            // 
             // permit_type_box
             // 
             this.permit_type_box.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -252,6 +243,31 @@
             this.Close_btn.UseVisualStyleBackColor = true;
             this.Close_btn.Click += new System.EventHandler(this.Close_btn_Click);
             // 
+            // add_btn
+            // 
+            this.add_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.add_btn.Location = new System.Drawing.Point(105, 3);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(96, 37);
+            this.add_btn.TabIndex = 12;
+            this.add_btn.Text = "Add";
+            this.add_btn.UseVisualStyleBackColor = true;
+            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
+            // 
+            // massege_label
+            // 
+            this.massege_label.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.massege_label.AutoSize = true;
+            this.massege_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.massege_label.ForeColor = System.Drawing.Color.Red;
+            this.massege_label.Location = new System.Drawing.Point(3, 233);
+            this.massege_label.Name = "massege_label";
+            this.massege_label.Size = new System.Drawing.Size(137, 57);
+            this.massege_label.TabIndex = 20;
+            this.massege_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -285,5 +301,6 @@
         private System.Windows.Forms.DateTimePicker end_picker;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button Close_btn;
+        private System.Windows.Forms.Label massege_label;
     }
 }

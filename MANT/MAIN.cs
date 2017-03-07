@@ -12,13 +12,14 @@ namespace MANT
 {
     public partial class MAIN : Form
     {
-        
+        private SQLConnection conn;
+
         private Form1 myForm;
+        private DataTable licenceList;
 
         public MAIN()
         {
             InitializeComponent();
-            permit_gridview.AutoGenerateColumns = false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -45,6 +46,14 @@ namespace MANT
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void review_Click(object sender, EventArgs e)
+        {
+            
+            conn = new SQLConnection();
+            licenceList = conn.retrieveContactList(this);
+            this.dataGridView1.DataSource = licenceList;
         }
     }
 }

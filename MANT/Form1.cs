@@ -25,8 +25,18 @@ namespace MANT
 
             conn = new SQLConnection();
             string permitN = "1";
-            conn.retrieveContactList();
-            conn.createNewPermit(permitN, (permit_type_box.SelectedItem).ToString(), club_name_textBox.Text, applicant_name_textBox.Text, track_name_textBox.Text, start_picker.Value.Date, end_picker.Value.Date);
+            if(checkNull(permit_type_box.SelectedItem) == true)
+            {
+
+                conn.createNewPermit(permitN, (permit_type_box.SelectedItem).ToString(), club_name_textBox.Text, applicant_name_textBox.Text, track_name_textBox.Text, start_picker.Value.Date, end_picker.Value.Date);
+                this.massege_label.Text = "Successfully Added";
+
+            }
+            else
+            {
+                MessageForm messageForm = new MessageForm("Please select 'Permit Type'");
+                messageForm.Show();
+            }
             
         }
 
@@ -38,6 +48,18 @@ namespace MANT
         private void Close_btn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private bool checkNull(object item)
+        {
+            if(item == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

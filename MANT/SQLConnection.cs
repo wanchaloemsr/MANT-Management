@@ -14,7 +14,7 @@ namespace MANT
         private MySqlConnection con;
         private MySqlCommand cmd;
         private DataTable dataTable = new DataTable();
-
+        private MAIN myMain = new MAIN();
 
         public SQLConnection()
         {
@@ -45,7 +45,7 @@ namespace MANT
             }
         }
 
-        public void retrieveContactList()
+        public DataTable retrieveContactList(MANT.MAIN main)
         {
             string contact_command = "SELECT * FROM mant_db.permit_licence";
             List<Permit> contact_list = new List<Permit>();
@@ -55,12 +55,21 @@ namespace MANT
             cmd = new MySqlCommand(contact_command, con);
             using (MySqlDataAdapter da = new MySqlDataAdapter(cmd))
             {
+                
                 da.Fill(dt);
             }
             Console.WriteLine("DTTTTTTTTTTTTTTTTTT = " + dt.Rows.Count);
             con.Close();
-            //return contact_list;
 
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                foreach (var item in dataRow.ItemArray)
+                {
+                    Console.WriteLine(item);
+                }
+            }
+            //return contact_list;
+            return dt;
 
         }
 
